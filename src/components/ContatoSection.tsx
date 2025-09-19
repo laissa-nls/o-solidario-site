@@ -1,4 +1,4 @@
-import { Phone, Mail, MapPin, Clock, Instagram, Facebook, MessageCircle } from 'lucide-react';
+import { Phone, Mail, MapPin, Clock, Instagram, Facebook, MessageCircle, Heart } from 'lucide-react';
 import { Card } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 const ContatoSection = () => {
@@ -22,19 +22,16 @@ const ContatoSection = () => {
         </div>
 
         {/* Grid de contatos */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+        <div className="grid md:grid-cols-3 gap-6 mb-12">
           
-          {/* Telefone */}
-          
-
           {/* WhatsApp */}
           <Card className="p-6 text-center shadow-medium border-secondary/20 hover:shadow-strong hover:-translate-y-1 transition-spring group">
-            <div className="bg-secondary rounded-full p-4 w-16 h-16 mx-auto mb-4 shadow-medium group-hover:scale-110 transition-spring">
+            <div className="bg-green-500 rounded-full p-4 w-16 h-16 mx-auto mb-4 shadow-medium group-hover:scale-110 transition-spring">
               <MessageCircle className="h-8 w-8 text-white" />
             </div>
             <h3 className="text-lg font-bold text-foreground mb-2">WhatsApp</h3>
             <p className="text-muted-foreground mb-4">(11) 99876-5432</p>
-            <Button size="sm" className="bg-secondary hover:bg-secondary-hover text-white" onClick={() => window.open('https://wa.me/5511998765432')}>
+            <Button size="sm" className="bg-green-500 hover:bg-green-600 text-white" onClick={() => window.open('https://wa.me/5511998765432')}>
               Enviar Mensagem
             </Button>
           </Card>
@@ -65,7 +62,7 @@ const ContatoSection = () => {
         </div>
 
         {/* Informações detalhadas */}
-        <div className="grid md:grid-cols-2 gap-8 mb-12">
+        <div className="grid md:grid-cols-3 gap-8 mb-12">
           
           {/* Horários e informações */}
           <Card className="p-8 shadow-medium border-primary/20">
@@ -92,13 +89,39 @@ const ContatoSection = () => {
                   </div>
                 </div>
               </div>
-              
-              <div className="border-t border-primary/20 pt-4">
-                
-                
+            </div>
+          </Card>
+
+          {/* Dados para doação */}
+          <Card className="p-8 shadow-medium border-accent/20 md:col-span-1 min-h-full">
+            <h3 className="text-2xl font-bold text-foreground mb-6 flex items-center">
+              <Heart className="h-6 w-6 text-accent mr-3" />
+              Dados para Doação
+            </h3>
+            
+            <div className="space-y-6">
+              <div>
+                <h4 className="font-semibold text-foreground mb-2">PIX</h4>
+                <p className="text-muted-foreground font-mono text-sm bg-muted p-3 rounded">
+                  contato@acolhercomamor.org.br
+                </p>
               </div>
               
+              <div>
+                <h4 className="font-semibold text-foreground mb-2">Transferência Bancária</h4>
+                <div className="text-muted-foreground text-sm space-y-1">
+                  <p><strong>Banco:</strong> Banco do Brasil</p>
+                  <p><strong>Agência:</strong> 1234-5</p>
+                  <p><strong>Conta:</strong> 12345-6</p>
+                  <p><strong>CNPJ:</strong> 12.345.678/0001-90</p>
+                </div>
+              </div>
               
+              <div className="bg-accent/10 border border-accent/20 p-4 rounded-lg">
+                <p className="text-sm text-foreground/80">
+                  <strong>Importante:</strong> Toda doação é bem-vinda e será destinada ao cuidado integral das mulheres em tratamento oncológico.
+                </p>
+              </div>
             </div>
           </Card>
 
@@ -129,11 +152,10 @@ const ContatoSection = () => {
               </div>
               
               {/* Mapa placeholder */}
-              <div className="bg-muted rounded-lg h-48 flex items-center justify-center">
+              <div className="bg-muted rounded-lg h-32 flex items-center justify-center">
                 <div className="text-center">
-                  <MapPin className="h-8 w-8 text-secondary mx-auto mb-2" />
-                  <p className="text-muted-foreground text-sm">Mapa Interativo</p>
-                  <Button size="sm" className="mt-2 bg-secondary hover:bg-secondary-hover text-white" onClick={() => window.open('https://maps.google.com/?q=Rua+do+Cuidado+123+São+Paulo')}>
+                  <MapPin className="h-6 w-6 text-secondary mx-auto mb-2" />
+                  <Button size="sm" className="bg-secondary hover:bg-secondary-hover text-white" onClick={() => window.open('https://maps.google.com/?q=Rua+do+Cuidado+123+São+Paulo')}>
                     Abrir no Google Maps
                   </Button>
                 </div>
@@ -150,15 +172,25 @@ const ContatoSection = () => {
               Acompanhe nossas atividades, histórias inspiradoras e formas de participar da nossa missão
             </p>
             
-            <div className="flex justify-center space-x-6">
+            <div className="flex justify-center mb-8">
               <Button size="lg" className="bg-gradient-to-r from-pink-500 to-purple-500 text-white hover:from-pink-600 hover:to-purple-600 transition-spring" onClick={() => window.open('https://instagram.com/acolhercomamor')}>
                 <Instagram className="h-5 w-5 mr-2" />
                 Instagram
               </Button>
-              
-              
-              
-              
+            </div>
+
+            {/* Feed do Instagram */}
+            <div className="bg-muted rounded-lg p-6">
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+                {[1, 2, 3, 4, 5, 6, 7, 8].map((item) => (
+                  <div key={item} className="aspect-square bg-gradient-to-br from-pink-400 to-purple-600 rounded-lg flex items-center justify-center">
+                    <Instagram className="h-8 w-8 text-white opacity-80" />
+                  </div>
+                ))}
+              </div>
+              <p className="text-muted-foreground text-sm mt-4">
+                Feed em breve - siga-nos no Instagram para ver nossas publicações mais recentes
+              </p>
             </div>
           </Card>
         </div>

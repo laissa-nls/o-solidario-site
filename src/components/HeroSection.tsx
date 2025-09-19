@@ -21,17 +21,8 @@ const HeroSection = () => {
       <div className="relative z-10 container mx-auto px-4 pt-24 pb-16">
         <div className="grid lg:grid-cols-2 gap-12 items-center min-h-[80vh]">
           
-          {/* Lado esquerdo - Logo e impacto */}
+          {/* Lado esquerdo - Texto e impacto */}
           <div className="text-center lg:text-left space-y-8">
-            <div className="flex justify-center lg:justify-start">
-              <div className="relative">
-                <img src={logoAssociacao} alt="Logo Acolher com Amor" className="w-32 h-32 lg:w-40 lg:h-40 rounded-full shadow-strong transform hover:scale-105 transition-spring" />
-                <div className="absolute -top-2 -right-2 bg-accent rounded-full p-2 shadow-medium">
-                  <Heart className="h-6 w-6 text-white animate-pulse" />
-                </div>
-              </div>
-            </div>
-
             <div className="space-y-6">
               <h1 className="text-4xl lg:text-6xl font-bold text-foreground leading-tight">
                 Acolher com
@@ -55,9 +46,18 @@ const HeroSection = () => {
             </div>
           </div>
 
-          {/* Lado direito - Apresentação rápida */}
-          <div className="space-y-6">
-            
+          {/* Lado direito - Logo grande */}
+          <div className="flex justify-center lg:justify-end">
+            <div className="relative">
+              <img 
+                src={logoAssociacao} 
+                alt="Logo Acolher com Amor" 
+                className="w-64 h-64 lg:w-80 lg:h-80 rounded-full shadow-strong transform hover:scale-105 transition-spring" 
+              />
+              <div className="absolute -top-4 -right-4 bg-accent rounded-full p-4 shadow-medium">
+                <Heart className="h-8 w-8 text-white animate-pulse" />
+              </div>
+            </div>
           </div>
         </div>
       </div>

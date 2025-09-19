@@ -5,6 +5,7 @@ import AtividadesSection from '@/components/AtividadesSection';
 import VoluntariadoSection from '@/components/VoluntariadoSection';
 import ContatoSection from '@/components/ContatoSection';
 import Footer from '@/components/Footer';
+import WhatsAppButton from '@/components/WhatsAppButton';
 
 const Index = () => {
   return (
@@ -18,6 +19,7 @@ const Index = () => {
         <ContatoSection />
       </main>
       <Footer />
+      <WhatsAppButton />
     </div>
   );
 };

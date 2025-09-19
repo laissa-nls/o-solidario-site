@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Menu, X, Heart, Instagram, Facebook, Phone } from 'lucide-react';
+import { Menu, X, Heart, Instagram, MessageCircle } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import logoAssociacao from '@/assets/logo-associacao.png';
 
@@ -70,14 +70,11 @@ const Header = () => {
 
           {/* Redes Sociais Desktop */}
           <div className="hidden md:flex items-center space-x-3">
-            <Button size="sm" variant="ghost" className="p-2 hover:bg-primary/10">
+            <Button size="sm" variant="ghost" className="p-2 hover:bg-primary/10" onClick={() => window.open('https://instagram.com/acolhercomamor')}>
               <Instagram className="h-4 w-4 text-accent" />
             </Button>
-            <Button size="sm" variant="ghost" className="p-2 hover:bg-primary/10">
-              <Facebook className="h-4 w-4 text-secondary" />
-            </Button>
-            <Button size="sm" variant="ghost" className="p-2 hover:bg-primary/10">
-              <Phone className="h-4 w-4 text-accent" />
+            <Button size="sm" variant="ghost" className="p-2 hover:bg-primary/10" onClick={() => window.open('https://wa.me/5511998765432')}>
+              <MessageCircle className="h-4 w-4 text-secondary" />
             </Button>
           </div>
 
@@ -134,14 +131,11 @@ const Header = () => {
               
               {/* Redes Sociais Mobile */}
               <div className="flex items-center space-x-3 pt-3 border-t border-primary/20">
-                <Button size="sm" variant="ghost" className="p-2 hover:bg-primary/10">
+                <Button size="sm" variant="ghost" className="p-2 hover:bg-primary/10" onClick={() => window.open('https://instagram.com/acolhercomamor')}>
                   <Instagram className="h-4 w-4 text-accent" />
                 </Button>
-                <Button size="sm" variant="ghost" className="p-2 hover:bg-primary/10">
-                  <Facebook className="h-4 w-4 text-secondary" />
-                </Button>
-                <Button size="sm" variant="ghost" className="p-2 hover:bg-primary/10">
-                  <Phone className="h-4 w-4 text-accent" />
+                <Button size="sm" variant="ghost" className="p-2 hover:bg-primary/10" onClick={() => window.open('https://wa.me/5511998765432')}>
+                  <MessageCircle className="h-4 w-4 text-secondary" />
                 </Button>
               </div>
             </nav>

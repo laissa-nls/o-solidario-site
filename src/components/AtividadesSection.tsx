@@ -1,46 +1,42 @@
-import { Heart, Brain, Scissors, Coffee, Palette, Music, Users, Home } from 'lucide-react';
+import { Heart, Brain, Scissors, Coffee, Palette, Music, Users } from 'lucide-react';
 import { Card } from '@/components/ui/card';
+import apoioPsicologico from '@/assets/apoio-psicologico.jpg';
+import cuidadosEsteticos from '@/assets/cuidados-esteticos.jpg';
+import cafeManha from '@/assets/cafe-manha.jpg';
+import oficinasCreativas from '@/assets/oficinas-criativas.jpg';
+import musicoterapia from '@/assets/musicoterapia.jpg';
+import gruposApoio from '@/assets/grupos-apoio.jpg';
 const AtividadesSection = () => {
   const atividades = [{
-    icon: Brain,
+    image: apoioPsicologico,
     title: "Apoio Psicológico",
     description: "Atendimento individual e em grupo com psicólogas especializadas em oncologia, oferecendo suporte emocional durante todo o tratamento.",
     color: "accent"
   }, {
-    icon: Scissors,
+    image: cuidadosEsteticos,
     title: "Cuidados Estéticos",
     description: "Corte e cuidado de cabelos, maquiagem terapêutica e oficinas de autoestima para valorizar a beleza em cada etapa da jornada.",
     color: "secondary"
   }, {
-    icon: Coffee,
+    image: cafeManha,
     title: "Café da Manhã Especial",
     description: "Encontros semanais com café da manhã carinhoso, criando momentos de conexão, partilha e fortalecimento dos laços de amizade.",
     color: "primary"
   }, {
-    icon: Palette,
+    image: oficinasCreativas,
     title: "Oficinas Criativas",
     description: "Atividades de artesanato, pintura e trabalhos manuais que estimulam a criatividade e proporcionam momentos de relaxamento.",
     color: "accent"
   }, {
-    icon: Music,
+    image: musicoterapia,
     title: "Musicoterapia",
     description: "Sessões musicais terapêuticas que utilizam a música como ferramenta de cura emocional e expressão de sentimentos.",
     color: "secondary"
   }, {
-    icon: Users,
+    image: gruposApoio,
     title: "Grupos de Apoio",
     description: "Rodas de conversa entre pacientes e familiares, criando uma rede de apoio mútuo baseada na troca de experiências.",
     color: "primary"
-  }, {
-    icon: Home,
-    title: "Visitas Domiciliares",
-    description: "Acompanhamento personalizado no conforto do lar para pacientes em tratamento que não podem se deslocar até nossa sede.",
-    color: "accent"
-  }, {
-    icon: Heart,
-    title: "Acolhimento Familiar",
-    description: "Apoio integral às famílias, incluindo orientações práticas, apoio emocional e acompanhamento durante consultas médicas.",
-    color: "secondary"
   }];
   const getColorClasses = (color: string) => {
     switch (color) {
@@ -74,21 +70,25 @@ const AtividadesSection = () => {
         </div>
 
         {/* Grid de atividades */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 mb-16">
-          {atividades.map((atividade, index) => {
-          const IconComponent = atividade.icon;
-          return <Card key={index} className="p-6 text-center shadow-medium border-primary/20 hover:shadow-strong hover:-translate-y-1 transition-spring group">
-                <div className={`${getColorClasses(atividade.color)} rounded-full p-4 w-16 h-16 mx-auto mb-4 shadow-medium group-hover:scale-110 transition-spring`}>
-                  <IconComponent className="h-8 w-8 text-white" />
-                </div>
-                <h3 className="text-lg font-bold text-foreground mb-3 group-hover:text-accent transition-smooth">
-                  {atividade.title}
-                </h3>
-                <p className="text-sm text-muted-foreground leading-relaxed">
-                  {atividade.description}
-                </p>
-              </Card>;
-        })}
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
+          {atividades.map((atividade, index) => (
+            <Card key={index} className="p-6 text-center shadow-medium border-primary/20 hover:shadow-strong hover:-translate-y-1 transition-spring group overflow-hidden">
+              <div className="relative w-full h-48 mb-4 rounded-lg overflow-hidden">
+                <img 
+                  src={atividade.image} 
+                  alt={atividade.title}
+                  className="w-full h-full object-cover group-hover:scale-110 transition-spring"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-60"></div>
+              </div>
+              <h3 className="text-lg font-bold text-foreground mb-3 group-hover:text-accent transition-smooth">
+                {atividade.title}
+              </h3>
+              <p className="text-sm text-muted-foreground leading-relaxed">
+                {atividade.description}
+              </p>
+            </Card>
+          ))}
         </div>
 
         {/* Informações adicionais */}

@@ -1,58 +1,47 @@
 import { Heart, Brain, Scissors, Coffee, Palette, Music, Users, Home } from 'lucide-react';
 import { Card } from '@/components/ui/card';
-
 const AtividadesSection = () => {
-  const atividades = [
-    {
-      icon: Brain,
-      title: "Apoio Psicológico",
-      description: "Atendimento individual e em grupo com psicólogas especializadas em oncologia, oferecendo suporte emocional durante todo o tratamento.",
-      color: "accent"
-    },
-    {
-      icon: Scissors,
-      title: "Cuidados Estéticos",
-      description: "Corte e cuidado de cabelos, maquiagem terapêutica e oficinas de autoestima para valorizar a beleza em cada etapa da jornada.",
-      color: "secondary"
-    },
-    {
-      icon: Coffee,
-      title: "Café da Manhã Especial",
-      description: "Encontros semanais com café da manhã carinhoso, criando momentos de conexão, partilha e fortalecimento dos laços de amizade.",
-      color: "primary"
-    },
-    {
-      icon: Palette,
-      title: "Oficinas Criativas",
-      description: "Atividades de artesanato, pintura e trabalhos manuais que estimulam a criatividade e proporcionam momentos de relaxamento.",
-      color: "accent"
-    },
-    {
-      icon: Music,
-      title: "Musicoterapia",
-      description: "Sessões musicais terapêuticas que utilizam a música como ferramenta de cura emocional e expressão de sentimentos.",
-      color: "secondary"
-    },
-    {
-      icon: Users,
-      title: "Grupos de Apoio",
-      description: "Rodas de conversa entre pacientes e familiares, criando uma rede de apoio mútuo baseada na troca de experiências.",
-      color: "primary"
-    },
-    {
-      icon: Home,
-      title: "Visitas Domiciliares",
-      description: "Acompanhamento personalizado no conforto do lar para pacientes em tratamento que não podem se deslocar até nossa sede.",
-      color: "accent"
-    },
-    {
-      icon: Heart,
-      title: "Acolhimento Familiar",
-      description: "Apoio integral às famílias, incluindo orientações práticas, apoio emocional e acompanhamento durante consultas médicas.",
-      color: "secondary"
-    }
-  ];
-
+  const atividades = [{
+    icon: Brain,
+    title: "Apoio Psicológico",
+    description: "Atendimento individual e em grupo com psicólogas especializadas em oncologia, oferecendo suporte emocional durante todo o tratamento.",
+    color: "accent"
+  }, {
+    icon: Scissors,
+    title: "Cuidados Estéticos",
+    description: "Corte e cuidado de cabelos, maquiagem terapêutica e oficinas de autoestima para valorizar a beleza em cada etapa da jornada.",
+    color: "secondary"
+  }, {
+    icon: Coffee,
+    title: "Café da Manhã Especial",
+    description: "Encontros semanais com café da manhã carinhoso, criando momentos de conexão, partilha e fortalecimento dos laços de amizade.",
+    color: "primary"
+  }, {
+    icon: Palette,
+    title: "Oficinas Criativas",
+    description: "Atividades de artesanato, pintura e trabalhos manuais que estimulam a criatividade e proporcionam momentos de relaxamento.",
+    color: "accent"
+  }, {
+    icon: Music,
+    title: "Musicoterapia",
+    description: "Sessões musicais terapêuticas que utilizam a música como ferramenta de cura emocional e expressão de sentimentos.",
+    color: "secondary"
+  }, {
+    icon: Users,
+    title: "Grupos de Apoio",
+    description: "Rodas de conversa entre pacientes e familiares, criando uma rede de apoio mútuo baseada na troca de experiências.",
+    color: "primary"
+  }, {
+    icon: Home,
+    title: "Visitas Domiciliares",
+    description: "Acompanhamento personalizado no conforto do lar para pacientes em tratamento que não podem se deslocar até nossa sede.",
+    color: "accent"
+  }, {
+    icon: Heart,
+    title: "Acolhimento Familiar",
+    description: "Apoio integral às famílias, incluindo orientações práticas, apoio emocional e acompanhamento durante consultas médicas.",
+    color: "secondary"
+  }];
   const getColorClasses = (color: string) => {
     switch (color) {
       case 'accent':
@@ -65,9 +54,7 @@ const AtividadesSection = () => {
         return 'bg-gradient-accent';
     }
   };
-
-  return (
-    <section id="atividades" className="py-20 bg-background">
+  return <section id="atividades" className="py-20 bg-background">
       <div className="container mx-auto px-4">
         
         {/* Cabeçalho da seção */}
@@ -89,12 +76,8 @@ const AtividadesSection = () => {
         {/* Grid de atividades */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 mb-16">
           {atividades.map((atividade, index) => {
-            const IconComponent = atividade.icon;
-            return (
-              <Card 
-                key={index} 
-                className="p-6 text-center shadow-medium border-primary/20 hover:shadow-strong hover:-translate-y-1 transition-spring group"
-              >
+          const IconComponent = atividade.icon;
+          return <Card key={index} className="p-6 text-center shadow-medium border-primary/20 hover:shadow-strong hover:-translate-y-1 transition-spring group">
                 <div className={`${getColorClasses(atividade.color)} rounded-full p-4 w-16 h-16 mx-auto mb-4 shadow-medium group-hover:scale-110 transition-spring`}>
                   <IconComponent className="h-8 w-8 text-white" />
                 </div>
@@ -104,41 +87,15 @@ const AtividadesSection = () => {
                 <p className="text-sm text-muted-foreground leading-relaxed">
                   {atividade.description}
                 </p>
-              </Card>
-            );
-          })}
+              </Card>;
+        })}
         </div>
 
         {/* Informações adicionais */}
         <div className="grid md:grid-cols-2 gap-8">
           
           {/* Horários de funcionamento */}
-          <Card className="p-8 shadow-medium border-primary/20">
-            <h3 className="text-2xl font-bold text-foreground mb-6 flex items-center">
-              <div className="bg-primary rounded-full p-2 mr-3">
-                <Heart className="h-5 w-5 text-foreground" />
-              </div>
-              Horários de Atendimento
-            </h3>
-            <div className="space-y-4 text-muted-foreground">
-              <div className="flex justify-between">
-                <span>Segunda a Sexta:</span>
-                <span className="font-medium">8h às 17h</span>
-              </div>
-              <div className="flex justify-between">
-                <span>Sábados:</span>
-                <span className="font-medium">8h às 12h</span>
-              </div>
-              <div className="flex justify-between">
-                <span>Grupos de Apoio:</span>
-                <span className="font-medium">Terças e Quintas 14h</span>
-              </div>
-              <div className="flex justify-between">
-                <span>Café Especial:</span>
-                <span className="font-medium">Sábados 9h</span>
-              </div>
-            </div>
-          </Card>
+          
 
           {/* Como participar */}
           <Card className="p-8 shadow-medium border-secondary/20">
@@ -169,8 +126,6 @@ const AtividadesSection = () => {
           </Card>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default AtividadesSection;

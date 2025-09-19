@@ -1,10 +1,8 @@
 import { Phone, Mail, MapPin, Clock, Instagram, Facebook, MessageCircle } from 'lucide-react';
 import { Card } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-
 const ContatoSection = () => {
-  return (
-    <section id="contato" className="py-20 bg-background">
+  return <section id="contato" className="py-20 bg-background">
       <div className="container mx-auto px-4">
         
         {/* Cabeçalho da seção */}
@@ -27,20 +25,7 @@ const ContatoSection = () => {
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
           
           {/* Telefone */}
-          <Card className="p-6 text-center shadow-medium border-primary/20 hover:shadow-strong hover:-translate-y-1 transition-spring group">
-            <div className="bg-accent rounded-full p-4 w-16 h-16 mx-auto mb-4 shadow-medium group-hover:scale-110 transition-spring">
-              <Phone className="h-8 w-8 text-white" />
-            </div>
-            <h3 className="text-lg font-bold text-foreground mb-2">Telefone</h3>
-            <p className="text-muted-foreground mb-4">(11) 3456-7890</p>
-            <Button 
-              size="sm" 
-              className="bg-accent hover:bg-accent-hover text-white"
-              onClick={() => window.open('tel:+551134567890')}
-            >
-              Ligar Agora
-            </Button>
-          </Card>
+          
 
           {/* WhatsApp */}
           <Card className="p-6 text-center shadow-medium border-secondary/20 hover:shadow-strong hover:-translate-y-1 transition-spring group">
@@ -49,11 +34,7 @@ const ContatoSection = () => {
             </div>
             <h3 className="text-lg font-bold text-foreground mb-2">WhatsApp</h3>
             <p className="text-muted-foreground mb-4">(11) 99876-5432</p>
-            <Button 
-              size="sm" 
-              className="bg-secondary hover:bg-secondary-hover text-white"
-              onClick={() => window.open('https://wa.me/5511998765432')}
-            >
+            <Button size="sm" className="bg-secondary hover:bg-secondary-hover text-white" onClick={() => window.open('https://wa.me/5511998765432')}>
               Enviar Mensagem
             </Button>
           </Card>
@@ -65,11 +46,7 @@ const ContatoSection = () => {
             </div>
             <h3 className="text-lg font-bold text-foreground mb-2">E-mail</h3>
             <p className="text-muted-foreground mb-4 text-sm">contato@acolhercomamor.org.br</p>
-            <Button 
-              size="sm" 
-              className="bg-primary hover:bg-primary-hover"
-              onClick={() => window.open('mailto:contato@acolhercomamor.org.br')}
-            >
+            <Button size="sm" className="bg-primary hover:bg-primary-hover" onClick={() => window.open('mailto:contato@acolhercomamor.org.br')}>
               Enviar E-mail
             </Button>
           </Card>
@@ -81,11 +58,7 @@ const ContatoSection = () => {
             </div>
             <h3 className="text-lg font-bold text-foreground mb-2">Localização</h3>
             <p className="text-muted-foreground mb-4 text-sm">Rua do Cuidado, 123<br />São Paulo - SP</p>
-            <Button 
-              size="sm" 
-              className="bg-gradient-accent hover:bg-accent-hover text-white"
-              onClick={() => window.open('https://maps.google.com/?q=Rua+do+Cuidado+123+São+Paulo')}
-            >
+            <Button size="sm" className="bg-gradient-accent hover:bg-accent-hover text-white" onClick={() => window.open('https://maps.google.com/?q=Rua+do+Cuidado+123+São+Paulo')}>
               Ver no Mapa
             </Button>
           </Card>
@@ -121,20 +94,11 @@ const ContatoSection = () => {
               </div>
               
               <div className="border-t border-primary/20 pt-4">
-                <h4 className="font-semibold text-foreground mb-3">Plantão de Emergência</h4>
-                <p className="text-muted-foreground">
-                  WhatsApp disponível 24h para situações de emergência emocional 
-                  com nossa equipe de plantão.
-                </p>
+                
+                
               </div>
               
-              <div className="border-t border-primary/20 pt-4">
-                <h4 className="font-semibold text-foreground mb-3">Agendamento</h4>
-                <p className="text-muted-foreground">
-                  Para primeira consulta ou visita, recomendamos agendamento prévio 
-                  para melhor acolhimento.
-                </p>
-              </div>
+              
             </div>
           </Card>
 
@@ -169,11 +133,7 @@ const ContatoSection = () => {
                 <div className="text-center">
                   <MapPin className="h-8 w-8 text-secondary mx-auto mb-2" />
                   <p className="text-muted-foreground text-sm">Mapa Interativo</p>
-                  <Button 
-                    size="sm" 
-                    className="mt-2 bg-secondary hover:bg-secondary-hover text-white"
-                    onClick={() => window.open('https://maps.google.com/?q=Rua+do+Cuidado+123+São+Paulo')}
-                  >
+                  <Button size="sm" className="mt-2 bg-secondary hover:bg-secondary-hover text-white" onClick={() => window.open('https://maps.google.com/?q=Rua+do+Cuidado+123+São+Paulo')}>
                     Abrir no Google Maps
                   </Button>
                 </div>
@@ -191,38 +151,18 @@ const ContatoSection = () => {
             </p>
             
             <div className="flex justify-center space-x-6">
-              <Button 
-                size="lg" 
-                className="bg-gradient-to-r from-pink-500 to-purple-500 text-white hover:from-pink-600 hover:to-purple-600 transition-spring"
-                onClick={() => window.open('https://instagram.com/acolhercomamor')}
-              >
+              <Button size="lg" className="bg-gradient-to-r from-pink-500 to-purple-500 text-white hover:from-pink-600 hover:to-purple-600 transition-spring" onClick={() => window.open('https://instagram.com/acolhercomamor')}>
                 <Instagram className="h-5 w-5 mr-2" />
                 Instagram
               </Button>
               
-              <Button 
-                size="lg" 
-                className="bg-blue-600 text-white hover:bg-blue-700 transition-spring"
-                onClick={() => window.open('https://facebook.com/acolhercomamor')}
-              >
-                <Facebook className="h-5 w-5 mr-2" />
-                Facebook
-              </Button>
               
-              <Button 
-                size="lg" 
-                className="bg-green-500 text-white hover:bg-green-600 transition-spring"
-                onClick={() => window.open('https://wa.me/5511998765432')}
-              >
-                <MessageCircle className="h-5 w-5 mr-2" />
-                WhatsApp
-              </Button>
+              
+              
             </div>
           </Card>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default ContatoSection;

@@ -14,7 +14,7 @@ const QuemSomosSection = () => {
             </div>
           </div>
           <h2 className="text-4xl lg:text-5xl font-bold text-foreground mb-6">
-            Nossa História de Amor e Cuidado
+            Nossa História de Amor e Cuidadosssssss
           </h2>
           <p className="text-xl text-muted-foreground leading-relaxed">
             Nascemos do desejo de transformar a dor em esperança e o medo em força, 
